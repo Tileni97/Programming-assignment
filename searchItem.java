@@ -1,24 +1,24 @@
 import java.util.Scanner;
 
-public class searchItem {
+public class searchItem { //initalisation of the code
         public static void main(String[] args) {
     double total = 0.0;
-
+//Give the user a choice of items to buy
     System.out.println("----------------------------------");
     System.out.println("|   1. Search Food Menu         |");
     System.out.println("|   2. Search Drink Menu        |");
     System.out.println("|   3. Search Desert Menu       |");
     System.out.println("|   4. Exit                     |");
     System.out.println("-----------------------------------");
-
+//Ask the user to enter a choice
     System.out.println("Please enter your choice: ");
     Scanner input = new Scanner(System.in);
     int item = input.nextInt();
 
-
+//Switch statement to determine the item the user wants to buy
     do {
         switch (item) {
-            case 1 -> {
+            case 1 -> { //Food Menu
                 System.out.println("Food Menu");
                 System.out.println("1. Burger and chips");
                 System.out.println("2. Pizza");
@@ -58,6 +58,7 @@ public class searchItem {
                     System.out.println("Invalid choice");
                 }
             }
+            //Drink Menu
             case 2 -> {
                 System.out.println("Drink Menu");
                 System.out.println("1. Coke");
@@ -98,7 +99,7 @@ public class searchItem {
                     System.out.println("Invalid choice");
                 }
             }
-            case 3 -> {
+            case 3 -> {//Desert Menu
                 System.out.println("Desert Menu");
                 System.out.println("1. Ice Cream");
                 System.out.println("2. Chocolate Cake");
@@ -138,12 +139,12 @@ public class searchItem {
                     System.out.println("Invalid choice");
                 }
             }
-            case 4 -> {
+            case 4 -> { //Exit
                 System.out.println("Exit");
                 System.out.println("Total: N$ " + total);
             }
             default -> System.out.println("Invalid choice");
         }
-    } while (item != 4);
-}
+    } while (item != 4); //Loop to keep the program running until the user chooses to exit
+    }
 }
