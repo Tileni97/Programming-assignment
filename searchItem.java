@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class searchItem { //initalisation of the code
+public class searchItem { // initialize total
         public static void main(String[] args) {
     double total = 0.0;
-//Give the user a choice of items to buy
+                                //Give the user a choice of items to buy
     System.out.println("----------------------------------");
     System.out.println("|   1. Search Food Menu         |");
     System.out.println("|   2. Search Drink Menu        |");
