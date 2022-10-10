@@ -3,14 +3,19 @@ import java.util.Scanner;
 
 public class Main{
     private static final Scanner sc = new Scanner(System.in);
-    private static Member member = new Member("blabla", "blabla", "bla");
+    private static Member member = new Member("example", "example", "example"); // Calling Member class
 
     public static void main(String[] args) {
 
         boolean exitRequested = false;
         while (!exitRequested) {
-            System.out.println(
-                    "Press: " + "\n" + "\r" + "1.Register" + "\n" + "\r" + "2.Log in" + "\n" + "\r" + "3.Admin login " + "\n" + "\r" + "4.Exit.");
+            System.out.println(  // Creating case structure
+                    "Press: " + "\n" + "\r" +
+                            "1.Register" + "\n" + "\r" +
+                            "2.Log in" + "\n" + "\r" +
+                            "3.Admin login " + "\n" + "\r" +
+                            "4.Exit.");
+
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -28,7 +33,7 @@ public class Main{
                 case 4:
                     exitRequested = true;
                     break;
-
+                    // Giving all the options to choose from in the menu
 
 
                 default:
@@ -39,7 +44,7 @@ public class Main{
 
     }
 
-    public static void register() {
+    public static void register() { // Regestration menu, with all required input credentials
         System.out.println("Enter your First name?");
         String firstName = sc.next();
         System.out.println("Please enter username");
@@ -54,7 +59,7 @@ public class Main{
 
     }
 
-    public static void login() { // here I got stuck I seriously dont know how to continue...
+    public static void login() { // Login process with all required credentials
 
         System.out.println("\n Proceed to Log in. Please enter your Login credentials. \n");
         System.out.println("Username:");
@@ -75,12 +80,12 @@ public class Main{
         }
 
         if (username.equals(username) && password.equals(password)) {
-            System.exit(0);
+            System.exit(0);  // Ends the program after successfull Log In
         }
 
     }
 
-    public static void adminLogin() {
+    public static void adminLogin() {  // This is just for a preset "Athority" login
         System.out.println("Username:");
         String username = sc.next();
         System.out.println("Password:");
@@ -94,11 +99,11 @@ public class Main{
         }
 
             if (username.equals(username) && password.equals(password)) {
-                System.exit(0);
+                System.exit(0);  // Ends the program after successfull Log In
         }
     }
 
-    //This is just for testing purposes.
+    //This goes to the hashmap of the user credentials after regestration, when proceeding to the log in
     public static void find(HashMap<String, String> loginMember, String username, String password) {
         for (String i : loginMember.keySet()) {
             if (i.equals(username) && loginMember.get(i).equals(password)) {
