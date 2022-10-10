@@ -8,7 +8,7 @@ public class Member {
 
     private static final HashMap<String, String> loginMember = new HashMap<>();
 
-    //add a blank constructor so you can call this class for login purposes
+    //This adds a blank constructor so you can call this class for login purposes
     public Member(){
         this.username = "";
         this.password = "";
@@ -21,7 +21,7 @@ public class Member {
         this.firstName = firstName;
     }
 
-    //method to access hashmap to another class
+    //method allows the of a hashmap from another class
     public HashMap<String, String> getMemberMap() {
         return loginMember;
     }
@@ -39,7 +39,7 @@ public class Member {
     }
 
 
-    //something wrong with this method here
+    // Checks if it is the correct credentials entered by the user and if it has been regestered as an account
     public boolean isMemberExist(Member member){
         if(loginMember.containsKey(member.getUsername()) && loginMember.containsValue(member.getPassword())){
             return true;
@@ -49,7 +49,7 @@ public class Member {
         return false;
     }
 
-    //something also wrong here
+
     public void register(Member member) {
         loginMember.put(member.getUsername(),member.getPassword());
     }
