@@ -2,21 +2,20 @@ import java.util.Scanner;
 
 public class Cancel_Admin {
     public static void main(String[] args) {
-        char DelayOrder;
-        char Yes = 0;
-        int count = 0;
-        char CancelOrder;
+        int input;
+        String reasonOfcancelation;
         Scanner Input = new Scanner(System.in);
-        System.out.print("Please confirm Cancelation: ");
-        CancelOrder = (char) Input.nextInt();
-        if (CancelOrder == Yes) {
-            System.out.println("\n  Order" + CancelOrder[count] + "Cancelled Successfully");}
-        else{
-                System.out.println("Order: " + CancelOrder[count] + "Not Cancelled");
+        int[] ordernum = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+        System.out.println("Enter Order number");
+        input = Input.nextInt();
+        for (int i = 0; i < ordernum.length; i++) {
+            if (ordernum[20]!=input) {
+                System.out.println("order " + input + " canceled");
+                break;
             }
-        DelayOrder = (char) Input.nextInt();
-        if (DelayOrder == Yes);{
-            System.out.println("Order delayed");
         }
-        }
+        System.out.println("Entre a reason for cancellation");
+        reasonOfcancelation= Input.nextLine();
+        System.out.println(reasonOfcancelation);
     }
+}
