@@ -10,7 +10,7 @@ public class Main{
         boolean exitRequested = false;
         while (!exitRequested) {
             System.out.println(
-                    "Press: " + "\n" + "\r" + "1.Register" + "\n" + "\r" + "2.Log in" + "\n" + "\r" + "3.Exit.");
+                    "Press: " + "\n" + "\r" + "1.Register" + "\n" + "\r" + "2.Log in" + "\n" + "\r" + "3.Admin login " + "\n" + "\r" + "4.Exit.");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -22,12 +22,18 @@ public class Main{
                     break;
 
                 case 3:
+                    adminLogin();
+                    break;
+
+                case 4:
                     exitRequested = true;
                     break;
 
+
+
                 default:
                     System.out.println("?");
-                    break;
+                    return;
             }
         }
 
@@ -55,17 +61,41 @@ public class Main{
         String username = sc.next();
         System.out.println("Password:");
         String password = sc.next();
-            if(username.equals("Admin") && (password.equals("Admin"))) {
-                System.out.println("Welcome Admin");
-            }else{
-            System.out.println("Invalid Admin credentials");
-            return;
-        }
 
         Member x = new Member(); //call the member class
         HashMap<String, String> loginMember = x.getMemberMap(); //access the hashmap
 
         find(loginMember, username, password);
+
+        if (username.equals("default") && (password.equals("default"))) {
+            System.out.println("Welcome user");
+        } else {
+            System.out.println("Invalid user credentials");
+            return;
+        }
+
+        if (username.equals(username) && password.equals(password)) {
+            System.exit(0);
+        }
+
+    }
+
+    public static void adminLogin() {
+        System.out.println("Username:");
+        String username = sc.next();
+        System.out.println("Password:");
+        String password = sc.next();
+
+        if (username.equals("Admin") && (password.equals("Admin"))) {
+            System.out.println("Welcome Admin");
+        } else {
+            System.out.println("Invalid Admin credentials");
+            return;
+        }
+
+            if (username.equals(username) && password.equals(password)) {
+                System.exit(0);
+        }
     }
 
     //This is just for testing purposes.
@@ -73,12 +103,9 @@ public class Main{
         for (String i : loginMember.keySet()) {
             if (i.equals(username) && loginMember.get(i).equals(password)) {
                 System.out.println("Login successfull!");
-                System.out.println("Program will now terminate");
                 System.exit(0);
                 break;
             }
         }
-        System.out.println("Invalid Login Credentials, Please try again!");
-        login();
     }
 }
