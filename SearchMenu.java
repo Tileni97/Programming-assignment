@@ -18,22 +18,27 @@ public class SearchMenu { // class Items
         String ItemName = ""; // ItemName variable of type string
 
         do { // do while loop for the menu
+           
             System.out.println("Welcome to the Restaurant"); // print out Welcome to the Restaurant and options
+            System.out.println("<---------------------------------------->");
             System.out.println("1. Food Menu");
             System.out.println("2. Drink Menu");
             System.out.println("3. Dessert Menu");
             System.out.println("4. Search for an item");
             System.out.println("5. Exit");
+            System.out.println("<---------------------------------------->");
             System.out.println("Please enter your choice: "); //prompt user to enter their choice
             choice = input.nextInt();
 
             switch (choice) { // switch statement for the menu options
                 case 1 -> {
+                    System.out.println("<---------------------------------------->");
                     System.out.println("Food Menu"); // print out Food Menu and options
                     System.out.println("1. Burger and chips");
                     System.out.println("2. Pizza");
                     System.out.println("3. Pasta and Sirloin Steak");
                     System.out.println("4. Exit");
+                    System.out.println("<---------------------------------------->");
                     System.out.println("Please enter your choice: "); // prompt user to enter their choice
                     input = new Scanner(System.in); // create new scanner object called input and set
                     // it to the user input
@@ -77,11 +82,13 @@ public class SearchMenu { // class Items
                     }
                 }
                 case 2 -> { // case 2 for the second option in the menu
+                    System.out.println("<---------------------------------------->");
                     System.out.println("Drink Menu"); // print out Drink Menu and options
                     System.out.println("1. Coke");
                     System.out.println("2. Fanta");
                     System.out.println("3. Sprite");
                     System.out.println("4. Exit");
+                    System.out.println("<---------------------------------------->");
                     System.out.println("Please enter your choice: "); // prompt user to enter their choice
                     input = new Scanner(System.in);
                     item = input.nextInt();
@@ -125,11 +132,13 @@ public class SearchMenu { // class Items
                     }
                 }
                 case 3 -> { // case 3 for the third option in the menu
+                    System.out.println("<---------------------------------------->");
                     System.out.println("Dessert Menu"); // print out Desert Menu and options
                     System.out.println("1. Ice Cream");
                     System.out.println("2. Chocolate Cake");
                     System.out.println("3. Fruit Salad");
                     System.out.println("4. Exit");
+                    System.out.println("<---------------------------------------->");
                     System.out.println("Please enter your choice: "); // prompt user to enter their choice
                     input = new Scanner(System.in);
                     item = input.nextInt();
